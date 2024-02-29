@@ -46,7 +46,7 @@ const setRemoteData = async () => {
       res = await axios.get(
         `${msgPath}`
       );
-      const { content } = res.data.result;
+      const { content } = res.data;
       markup = content.reduce(
         (string, node) => string + generateMarkupRemote(node),
         ""
