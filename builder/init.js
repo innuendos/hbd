@@ -43,9 +43,8 @@ const setRemoteData = async () => {
     const pic = res.data;
     let markup = "";
     if (msgPath) {
-      const article = msgPath.split("/").pop();
       res = await axios.get(
-        `https://api.telegra.ph/getPage/${article}?return_content=true`
+        `${msgPath}`
       );
       const { content } = res.data.result;
       markup = content.reduce(
